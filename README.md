@@ -1,0 +1,1 @@
+# hazim-universal-anti-slop-Skills
