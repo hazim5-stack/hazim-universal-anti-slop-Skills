@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-test-quality"
+  short_description: "Detect empty assertions, always-passing tests, mock-only coverage, low-value snapshots, mismatched names, and missing failure paths."
+  default_prompt: "Use $hazim-test-quality to review this work and return evidence-backed findings."

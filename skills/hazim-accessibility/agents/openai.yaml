@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-accessibility"
+  short_description: "Audit keyboard access, focus, semantics, assistive technology, contrast, labels, error announcements, zoom, and reduced motion."
+  default_prompt: "Use $hazim-accessibility to review this work and return evidence-backed findings."

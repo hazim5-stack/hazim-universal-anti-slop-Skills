@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-antislop-repair"
+  short_description: "Repair approved anti-slop findings while preserving behavior, meaning, scope, and existing user work. Use after findings have been selected for correction."
+  default_prompt: "Use $hazim-antislop-repair to review this work and return evidence-backed findings."

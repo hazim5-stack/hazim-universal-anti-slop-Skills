@@ -1,0 +1,37 @@
+name: Rule proposal
+description: Propose a narrow, testable anti-slop rule.
+title: "[Rule]: "
+labels: [rule-proposal]
+body:
+  - type: input
+    id: identifier
+    attributes:
+      label: Proposed rule identifier
+      placeholder: domain.family.name
+    validations:
+      required: true
+  - type: textarea
+    id: defect
+    attributes:
+      label: Observable defect
+      description: Define the problem without making an authorship claim.
+    validations:
+      required: true
+  - type: textarea
+    id: positive
+    attributes:
+      label: Positive fixture
+    validations:
+      required: true
+  - type: textarea
+    id: counterexample
+    attributes:
+      label: Counterexample
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Impact and evidence
+    validations:
+      required: true

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-stub-fake-data-audit"
+  short_description: "Distinguish legitimate test fixtures and declared demos from production stubs, fabricated data, and unconnected interface behavior."
+  default_prompt: "Use $hazim-stub-fake-data-audit to review this work and return evidence-backed findings."

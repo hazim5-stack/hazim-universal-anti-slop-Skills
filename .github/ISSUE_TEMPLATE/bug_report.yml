@@ -1,0 +1,32 @@
+name: Bug report
+description: Report incorrect behavior, a false positive, or a validation failure.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed behavior
+      description: Include the exact rule identifier when available.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Provide the smallest safe fixture, command, or invocation.
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options: [Codex, Claude Code, Cursor, OpenCode, Deterministic scanner, Other]
+    validations:
+      required: true

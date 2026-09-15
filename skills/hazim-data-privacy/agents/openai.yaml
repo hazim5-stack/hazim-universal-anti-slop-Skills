@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-data-privacy"
+  short_description: "Review collection, retention, deletion, logging, analytics, external model transfer, and personally identifiable information handling."
+  default_prompt: "Use $hazim-data-privacy to review this work and return evidence-backed findings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-copy-semantic-guard"
+  short_description: "Compare source and revision to detect invented facts, strengthened claims, removed caveats, false causality, and changed meaning."
+  default_prompt: "Use $hazim-copy-semantic-guard to review this work and return evidence-backed findings."

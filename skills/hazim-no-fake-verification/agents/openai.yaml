@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-no-fake-verification"
+  short_description: "Reject unqualified claims such as fully tested, production ready, or everything works unless backed by recorded evidence."
+  default_prompt: "Use $hazim-no-fake-verification to review this work and return evidence-backed findings."

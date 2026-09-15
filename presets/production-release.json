@@ -1,0 +1,9 @@
+{
+  "preset": "production-release",
+  "skills": [
+    "hazim-antislop-delivery-gate",
+    "hazim-no-fake-verification",
+    "hazim-operational-readiness",
+    "hazim-release-gate"
+  ]
+}

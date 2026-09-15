@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-commit-quality"
+  short_description: "Review commit boundaries, messages, generated files, secret exposure, unrelated changes, and formatting noise."
+  default_prompt: "Use $hazim-commit-quality to review this work and return evidence-backed findings."

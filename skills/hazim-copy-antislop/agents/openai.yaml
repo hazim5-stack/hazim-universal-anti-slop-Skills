@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-copy-antislop"
+  short_description: "Audit and revise prose for formulaic vocabulary, empty framing, repetitive structures, generic conclusions, and low-information copy."
+  default_prompt: "Use $hazim-copy-antislop to review this work and return evidence-backed findings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-pr-gate"
+  short_description: "Evaluate pull requests through configurable, explainable signals without treating contributor identity or account age as proof of low quality."
+  default_prompt: "Use $hazim-pr-gate to review this work and return evidence-backed findings."

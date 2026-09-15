@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-ui-screenshot-audit"
+  short_description: "Inspect screenshots for hierarchy, identity, accessibility, template residue, decorative noise, and product-specific visual meaning."
+  default_prompt: "Use $hazim-ui-screenshot-audit to review this work and return evidence-backed findings."

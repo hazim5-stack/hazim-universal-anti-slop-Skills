@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-comments-docstrings"
+  short_description: "Remove comments that restate code while preserving rationale, constraints, contracts, workarounds, and safety context."
+  default_prompt: "Use $hazim-comments-docstrings to review this work and return evidence-backed findings."

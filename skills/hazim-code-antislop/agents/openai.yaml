@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-code-antislop"
+  short_description: "Guide or audit code changes for unnecessary dependencies, unrelated edits, repetition, incomplete behavior, and low-signal implementation."
+  default_prompt: "Use $hazim-code-antislop to review this work and return evidence-backed findings."

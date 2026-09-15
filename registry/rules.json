@@ -1,0 +1,16 @@
+{
+  "project": "Hazim Universal Anti-Slop Skills",
+  "author": "Hazim Batwa",
+  "rules": [
+    {"id": "code.placeholder.todo", "domain": "code", "kind": "regex", "severity": "warning", "pattern": "\\b(?:TODO|FIXME|HACK|XXX)\\b", "message": "Unresolved implementation marker"},
+    {"id": "code.placeholder.temporary", "domain": "code", "kind": "regex", "severity": "warning", "pattern": "\\b(?:for now|temporary solution|placeholder|stubbed?)\\b", "message": "Temporary or placeholder implementation language"},
+    {"id": "code.fake.not-implemented", "domain": "code", "kind": "regex", "severity": "error", "pattern": "(?:NotImplementedError|throw new Error\\([\"']Not implemented|return\\s+['\"]not implemented)", "message": "Explicitly unimplemented behavior"},
+    {"id": "code.error.empty-catch", "domain": "code", "kind": "regex", "severity": "error", "pattern": "catch\\s*(?:\\([^)]*\\))?\\s*\\{\\s*\\}", "message": "Empty catch block hides failure"},
+    {"id": "copy.chatbot.residue", "domain": "copy", "kind": "regex", "severity": "warning", "pattern": "\\b(?:great question|hope this helps|feel free to ask|as an ai language model)\\b", "message": "Chatbot residue in publishable prose"},
+    {"id": "copy.generic.opener", "domain": "copy", "kind": "regex", "severity": "signal", "pattern": "\\b(?:in today's fast-paced world|in an ever-evolving landscape|let's delve into)\\b", "message": "Generic model-era opener"},
+    {"id": "copy.generic.reframe", "domain": "copy", "kind": "regex", "severity": "signal", "pattern": "\\b(?:it is|it's|this is) not just .{1,80},? (?:it is|it's|this is)\\b", "message": "Formulaic negative-to-positive reframe"},
+    {"id": "copy.unsourced.collective", "domain": "copy", "kind": "regex", "severity": "warning", "pattern": "\\b(?:studies show|research proves|experts agree|everyone knows|most companies)\\b", "message": "Broad or unsourced attribution"},
+    {"id": "copy.marketing.unlock", "domain": "copy", "kind": "regex", "severity": "signal", "pattern": "\\bunlock the power of\\b", "message": "Generic marketing promise"},
+    {"id": "copy.hidden.zero-width", "domain": "copy", "kind": "regex", "severity": "error", "pattern": "[\\u200B-\\u200F\\u202A-\\u202E\\u2060\\u2066-\\u2069\\uFEFF]", "message": "Hidden or directional control character"}
+  ]
+}

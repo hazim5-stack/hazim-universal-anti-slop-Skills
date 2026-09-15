@@ -1,0 +1,10 @@
+{
+  "preset": "web-app",
+  "skills": [
+    "hazim-ui-antislop",
+    "hazim-ux-antislop",
+    "hazim-code-antislop",
+    "hazim-accessibility",
+    "hazim-interaction-smoke-test"
+  ]
+}

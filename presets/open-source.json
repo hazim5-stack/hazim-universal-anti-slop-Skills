@@ -1,0 +1,9 @@
+{
+  "preset": "open-source",
+  "skills": [
+    "hazim-minimal-diff",
+    "hazim-pr-hygiene",
+    "hazim-security-review",
+    "hazim-placeholder-detector"
+  ]
+}

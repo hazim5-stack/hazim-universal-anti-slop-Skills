@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-error-handling"
+  short_description: "Audit error propagation, silent catches, misleading fallbacks, retry behavior, user feedback, and false success states."
+  default_prompt: "Use $hazim-error-handling to review this work and return evidence-backed findings."

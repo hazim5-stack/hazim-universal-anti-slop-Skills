@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-specificity-test"
+  short_description: "Test whether a claim contains product-specific names, constraints, observations, measurements, dates, locations, or examples."
+  default_prompt: "Use $hazim-specificity-test to review this work and return evidence-backed findings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-substance-review"
+  short_description: "Review prose, documentation, code comments, or product claims for concrete meaning, specificity, evidence, and decision value."
+  default_prompt: "Use $hazim-substance-review to review this work and return evidence-backed findings."

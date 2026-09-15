@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-placeholder-detector"
+  short_description: "Detect TODO, FIXME, temporary paths, stubs, placeholder values, fake responses, and other implementation gaps."
+  default_prompt: "Use $hazim-placeholder-detector to review this work and return evidence-backed findings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-antislop-delivery-gate"
+  short_description: "Issue PASS, PASS WITH WARNINGS, FAIL, or NOT VERIFIED from observable evidence. Use immediately before a deliverable, release, or handoff."
+  default_prompt: "Use $hazim-antislop-delivery-gate to review this work and return evidence-backed findings."

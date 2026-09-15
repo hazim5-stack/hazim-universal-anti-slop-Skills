@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-copy-linter"
+  short_description: "Run deterministic prose checks with stable rule identifiers, suppressions, severity levels, and machine-readable output."
+  default_prompt: "Use $hazim-copy-linter to review this work and return evidence-backed findings."

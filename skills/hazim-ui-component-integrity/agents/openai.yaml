@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-ui-component-integrity"
+  short_description: "Verify that interface components include meaningful states, feedback, validation, and interaction behavior rather than presentation-only shells."
+  default_prompt: "Use $hazim-ui-component-integrity to review this work and return evidence-backed findings."

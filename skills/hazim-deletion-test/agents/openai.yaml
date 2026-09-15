@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-deletion-test"
+  short_description: "Remove a suspect span hypothetically and identify the exact information or behavior lost; flag it when no meaningful loss can be named."
+  default_prompt: "Use $hazim-deletion-test to review this work and return evidence-backed findings."

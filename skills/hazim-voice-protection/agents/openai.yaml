@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-voice-protection"
+  short_description: "Create and apply a protect list for signature vocabulary, rhythm, humor, stance, formality, dialect, and brand constraints."
+  default_prompt: "Use $hazim-voice-protection to review this work and return evidence-backed findings."

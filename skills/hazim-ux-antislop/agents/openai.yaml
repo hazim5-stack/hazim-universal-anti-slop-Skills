@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-ux-antislop"
+  short_description: "Audit user experience for unclear goals, ornamental features, empty dashboards, ambiguous actions, and template-driven flows."
+  default_prompt: "Use $hazim-ux-antislop to review this work and return evidence-backed findings."

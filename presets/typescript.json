@@ -1,0 +1,10 @@
+{
+  "preset": "typescript",
+  "skills": [
+    "hazim-code-antislop",
+    "hazim-dependency-gate",
+    "hazim-error-handling",
+    "hazim-security-review",
+    "hazim-test-quality"
+  ]
+}

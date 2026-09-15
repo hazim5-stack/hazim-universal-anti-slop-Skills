@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-authz-ownership"
+  short_description: "Verify user ownership, tenant isolation, administrative boundaries, sharing, revocation, deletion, and reauthentication behavior."
+  default_prompt: "Use $hazim-authz-ownership to review this work and return evidence-backed findings."

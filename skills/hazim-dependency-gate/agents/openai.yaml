@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-dependency-gate"
+  short_description: "Evaluate necessity, overlap, maintenance, size, license, security, and operational cost before adding a dependency."
+  default_prompt: "Use $hazim-dependency-gate to review this work and return evidence-backed findings."

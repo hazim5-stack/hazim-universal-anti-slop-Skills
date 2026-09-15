@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-operational-readiness"
+  short_description: "Review migrations, configuration, rollback, monitoring, logging, limits, backups, health checks, and production deployment assumptions."
+  default_prompt: "Use $hazim-operational-readiness to review this work and return evidence-backed findings."

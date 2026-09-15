@@ -1,0 +1,32 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate skill registry and packages
+        run: python3 scripts/validate_repository.py
+      - name: Run behavior tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Enforce English-only implementation files
+        run: |
+          if LC_ALL=C grep -rInP '[^\x00-\x7F]' --exclude-dir=.git --exclude-dir=__pycache__ --exclude='*.pyc' --exclude='*.zip' .; then
+            echo "Non-ASCII content found in repository implementation files."
+            exit 1
+          fi

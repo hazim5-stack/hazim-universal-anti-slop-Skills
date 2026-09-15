@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-generation-evaluator"
+  short_description: "Compare outputs across specificity, substance, accuracy, voice, rhythm, originality, completeness, and safety as separate dimensions."
+  default_prompt: "Use $hazim-generation-evaluator to review this work and return evidence-backed findings."

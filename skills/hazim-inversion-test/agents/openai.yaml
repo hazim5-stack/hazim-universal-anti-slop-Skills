@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-inversion-test"
+  short_description: "Negate a claim to test whether the original states a meaningful position or only an uncontested platitude."
+  default_prompt: "Use $hazim-inversion-test to review this work and return evidence-backed findings."

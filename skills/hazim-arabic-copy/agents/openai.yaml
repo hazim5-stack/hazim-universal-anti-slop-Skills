@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-arabic-copy"
+  short_description: "Audit or revise Arabic prose across formal, marketing, governmental, and Saudi conversational registers while preserving meaning and natural Arabic rhythm."
+  default_prompt: "Use $hazim-arabic-copy to review this work and return evidence-backed findings."

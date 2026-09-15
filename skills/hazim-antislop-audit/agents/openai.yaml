@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-antislop-audit"
+  short_description: "Run a cross-domain anti-slop audit with separate severity, confidence, evidence, and remediation fields. Use for broad reviews without modifying files."
+  default_prompt: "Use $hazim-antislop-audit to review this work and return evidence-backed findings."

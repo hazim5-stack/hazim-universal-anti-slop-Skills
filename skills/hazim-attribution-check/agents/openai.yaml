@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-attribution-check"
+  short_description: "Resolve citations, statistics, quotations, studies, package claims, and links to evidence that supports the precise assertion."
+  default_prompt: "Use $hazim-attribution-check to review this work and return evidence-backed findings."

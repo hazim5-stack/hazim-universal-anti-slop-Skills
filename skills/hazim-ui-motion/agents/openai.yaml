@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-ui-motion"
+  short_description: "Review interface motion for purpose, restraint, performance, interruption risk, and reduced-motion support."
+  default_prompt: "Use $hazim-ui-motion to review this work and return evidence-backed findings."

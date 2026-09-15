@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-release-gate"
+  short_description: "Verify versioning, changelog, builds, tests, migrations, rollback, licensing, security, and documented limitations before release."
+  default_prompt: "Use $hazim-release-gate to review this work and return evidence-backed findings."

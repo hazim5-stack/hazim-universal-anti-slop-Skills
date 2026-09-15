@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-pr-hygiene"
+  short_description: "Review pull-request scope, description accuracy, debug residue, migrations, breaking changes, and test evidence."
+  default_prompt: "Use $hazim-pr-hygiene to review this work and return evidence-backed findings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-model-output-profile"
+  short_description: "Compare model outputs with an appropriate human corpus to identify overrepresented words, phrases, structures, and n-grams."
+  default_prompt: "Use $hazim-model-output-profile to review this work and return evidence-backed findings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-form-antislop"
+  short_description: "Audit forms for unnecessary fields, weak validation, data loss, poor autofill, inaccessible errors, and unsuitable input behavior."
+  default_prompt: "Use $hazim-form-antislop to review this work and return evidence-backed findings."

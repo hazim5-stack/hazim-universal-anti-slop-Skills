@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-architecture-antislop"
+  short_description: "Detect speculative layers, single-use abstractions, premature services, configuration theater, and architecture without current consumers."
+  default_prompt: "Use $hazim-architecture-antislop to review this work and return evidence-backed findings."

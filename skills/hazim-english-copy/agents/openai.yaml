@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-english-copy"
+  short_description: "Audit or revise English prose for canned AI-era openings, reframes, buzzwords, chatbot residue, and synthetic cadence."
+  default_prompt: "Use $hazim-english-copy to review this work and return evidence-backed findings."

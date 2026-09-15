@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-prompt-antislop"
+  short_description: "Design concise generation constraints that reduce formulaic output without creating brittle negative lists or sterile prose."
+  default_prompt: "Use $hazim-prompt-antislop to review this work and return evidence-backed findings."

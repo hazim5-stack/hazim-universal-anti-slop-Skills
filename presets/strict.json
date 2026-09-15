@@ -1,0 +1,12 @@
+{
+  "preset": "strict",
+  "skills": [
+    "hazim-antislop-audit",
+    "hazim-copy-semantic-guard",
+    "hazim-placeholder-detector",
+    "hazim-security-review",
+    "hazim-accessibility",
+    "hazim-no-fake-verification",
+    "hazim-release-gate"
+  ]
+}

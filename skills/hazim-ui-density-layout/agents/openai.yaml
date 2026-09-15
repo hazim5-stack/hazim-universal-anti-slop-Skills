@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-ui-density-layout"
+  short_description: "Review hierarchy, density, spacing, alignment, containers, columns, and information balance across interface layouts."
+  default_prompt: "Use $hazim-ui-density-layout to review this work and return evidence-backed findings."

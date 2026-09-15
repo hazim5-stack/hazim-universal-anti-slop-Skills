@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-secret-config-audit"
+  short_description: "Detect hard-coded secrets, exposed client credentials, unsafe environment defaults, debug configuration, and placeholder production credentials."
+  default_prompt: "Use $hazim-secret-config-audit to review this work and return evidence-backed findings."

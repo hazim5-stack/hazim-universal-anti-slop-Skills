@@ -1,0 +1,245 @@
+#!/usr/bin/env python3
+"""Generate the Hazim Universal Anti-Slop Skills repository.
+
+Created and curated by Hazim Batwa, Software Engineering Expert.
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+CATEGORIES = {
+    "core": {
+        "title": "Core Orchestration",
+        "purpose": "Route anti-slop work, coordinate audits and repairs, and enforce evidence-backed delivery decisions.",
+        "skills": {
+            "hazim-antislop": "Route a request to the smallest relevant set of Hazim Universal Anti-Slop skills. Use when a task spans multiple quality domains or the correct specialist is unclear.",
+            "hazim-antislop-audit": "Run a cross-domain anti-slop audit with separate severity, confidence, evidence, and remediation fields. Use for broad reviews without modifying files.",
+            "hazim-antislop-repair": "Repair approved anti-slop findings while preserving behavior, meaning, scope, and existing user work. Use after findings have been selected for correction.",
+            "hazim-antislop-delivery-gate": "Issue PASS, PASS WITH WARNINGS, FAIL, or NOT VERIFIED from observable evidence. Use immediately before a deliverable, release, or handoff.",
+        },
+    },
+    "ui-design": {
+        "title": "UI and Visual Design",
+        "purpose": "Reject generic visual defaults while preserving usability, product identity, and deliberate design choices.",
+        "skills": {
+            "hazim-ui-antislop": "Audit or guide interface design for generic AI-era visual patterns, decorative excess, and template-like composition without banning named styles by default.",
+            "hazim-ui-originality": "Test whether a visual system is specific to its product, audience, and content rather than transferable unchanged to an unrelated product.",
+            "hazim-ui-component-integrity": "Verify that interface components include meaningful states, feedback, validation, and interaction behavior rather than presentation-only shells.",
+            "hazim-ui-density-layout": "Review hierarchy, density, spacing, alignment, containers, columns, and information balance across interface layouts.",
+            "hazim-ui-motion": "Review interface motion for purpose, restraint, performance, interruption risk, and reduced-motion support.",
+            "hazim-ui-screenshot-audit": "Inspect screenshots for hierarchy, identity, accessibility, template residue, decorative noise, and product-specific visual meaning.",
+        },
+    },
+    "ux-product": {
+        "title": "UX and Product Integrity",
+        "purpose": "Verify that flows solve real user tasks and that visible product behavior is complete, comprehensible, and honest.",
+        "skills": {
+            "hazim-ux-antislop": "Audit user experience for unclear goals, ornamental features, empty dashboards, ambiguous actions, and template-driven flows.",
+            "hazim-user-flow-review": "Review an end-to-end user journey including entry, onboarding, primary task, failure recovery, completion, and exit.",
+            "hazim-form-antislop": "Audit forms for unnecessary fields, weak validation, data loss, poor autofill, inaccessible errors, and unsuitable input behavior.",
+            "hazim-product-reality-check": "Detect product theater such as fake live states, invented metrics, unconnected controls, placeholder dashboards, and unsupported claims.",
+        },
+    },
+    "copywriting": {
+        "title": "Copywriting and Human Voice",
+        "purpose": "Remove formulaic language while preserving facts, intent, register, and a writer or brand's distinctive voice.",
+        "skills": {
+            "hazim-copy-antislop": "Audit and revise prose for formulaic vocabulary, empty framing, repetitive structures, generic conclusions, and low-information copy.",
+            "hazim-arabic-copy": "Audit or revise Arabic prose across formal, marketing, governmental, and Saudi conversational registers while preserving meaning and natural Arabic rhythm.",
+            "hazim-english-copy": "Audit or revise English prose for canned AI-era openings, reframes, buzzwords, chatbot residue, and synthetic cadence.",
+            "hazim-voice-protection": "Create and apply a protect list for signature vocabulary, rhythm, humor, stance, formality, dialect, and brand constraints.",
+            "hazim-copy-semantic-guard": "Compare source and revision to detect invented facts, strengthened claims, removed caveats, false causality, and changed meaning.",
+            "hazim-copy-linter": "Run deterministic prose checks with stable rule identifiers, suppressions, severity levels, and machine-readable output.",
+        },
+    },
+    "code-quality": {
+        "title": "Code Quality and Completeness",
+        "purpose": "Prevent incomplete, theatrical, misleading, or low-signal implementation from reaching production.",
+        "skills": {
+            "hazim-code-antislop": "Guide or audit code changes for unnecessary dependencies, unrelated edits, repetition, incomplete behavior, and low-signal implementation.",
+            "hazim-placeholder-detector": "Detect TODO, FIXME, temporary paths, stubs, placeholder values, fake responses, and other implementation gaps.",
+            "hazim-stub-fake-data-audit": "Distinguish legitimate test fixtures and declared demos from production stubs, fabricated data, and unconnected interface behavior.",
+            "hazim-error-handling": "Audit error propagation, silent catches, misleading fallbacks, retry behavior, user feedback, and false success states.",
+            "hazim-comments-docstrings": "Remove comments that restate code while preserving rationale, constraints, contracts, workarounds, and safety context.",
+        },
+    },
+    "architecture": {
+        "title": "Architecture and Scope Control",
+        "purpose": "Keep changes proportionate, maintainable, and grounded in current requirements rather than speculative architecture.",
+        "skills": {
+            "hazim-minimal-diff": "Produce the smallest complete change that satisfies the request while preserving unrelated files and user modifications.",
+            "hazim-architecture-antislop": "Detect speculative layers, single-use abstractions, premature services, configuration theater, and architecture without current consumers.",
+            "hazim-dependency-gate": "Evaluate necessity, overlap, maintenance, size, license, security, and operational cost before adding a dependency.",
+            "hazim-no-drive-by-refactor": "Prevent unrelated cleanup, renaming, formatting, and restructuring from entering a scoped change.",
+        },
+    },
+    "security": {
+        "title": "Security and Privacy",
+        "purpose": "Find concrete security and privacy defects in the changed behavior without turning generic suspicion into unsupported findings.",
+        "skills": {
+            "hazim-security-review": "Perform a change-scoped security review covering authorization, injection, SSRF, XSS, CSRF, secrets, unsafe files, redirects, and defaults.",
+            "hazim-data-privacy": "Review collection, retention, deletion, logging, analytics, external model transfer, and personally identifiable information handling.",
+            "hazim-authz-ownership": "Verify user ownership, tenant isolation, administrative boundaries, sharing, revocation, deletion, and reauthentication behavior.",
+            "hazim-secret-config-audit": "Detect hard-coded secrets, exposed client credentials, unsafe environment defaults, debug configuration, and placeholder production credentials.",
+        },
+    },
+    "evidence": {
+        "title": "Evidence and Substance",
+        "purpose": "Replace authorship guessing with inspectable tests for specificity, evidence, meaning, and load-bearing value.",
+        "skills": {
+            "hazim-substance-review": "Review prose, documentation, code comments, or product claims for concrete meaning, specificity, evidence, and decision value.",
+            "hazim-deletion-test": "Remove a suspect span hypothetically and identify the exact information or behavior lost; flag it when no meaningful loss can be named.",
+            "hazim-inversion-test": "Negate a claim to test whether the original states a meaningful position or only an uncontested platitude.",
+            "hazim-attribution-check": "Resolve citations, statistics, quotations, studies, package claims, and links to evidence that supports the precise assertion.",
+            "hazim-specificity-test": "Test whether a claim contains product-specific names, constraints, observations, measurements, dates, locations, or examples.",
+        },
+    },
+    "accessibility-mobile": {
+        "title": "Accessibility, Mobile, and Internationalization",
+        "purpose": "Ensure interfaces work across abilities, input methods, viewport ranges, writing directions, and language combinations.",
+        "skills": {
+            "hazim-accessibility": "Audit keyboard access, focus, semantics, assistive technology, contrast, labels, error announcements, zoom, and reduced motion.",
+            "hazim-mobile-layout": "Audit responsive reflow, intermediate widths, touch targets, software keyboards, safe areas, overflow, and hover-only behavior.",
+            "hazim-rtl-bilingual": "Audit Arabic-English interfaces for directionality, mixed text, numerals, punctuation, icons, tables, alignment, and semantic mirroring.",
+        },
+    },
+    "testing-release": {
+        "title": "Testing and Operational Readiness",
+        "purpose": "Require meaningful verification and production readiness rather than optimistic completion claims.",
+        "skills": {
+            "hazim-interaction-smoke-test": "Exercise every changed interactive element and record observable outcomes, failures, and untested paths.",
+            "hazim-test-quality": "Detect empty assertions, always-passing tests, mock-only coverage, low-value snapshots, mismatched names, and missing failure paths.",
+            "hazim-operational-readiness": "Review migrations, configuration, rollback, monitoring, logging, limits, backups, health checks, and production deployment assumptions.",
+            "hazim-no-fake-verification": "Reject unqualified claims such as fully tested, production ready, or everything works unless backed by recorded evidence.",
+        },
+    },
+    "repository-pr": {
+        "title": "Repository, Git, Pull Requests, and Releases",
+        "purpose": "Keep repository changes reviewable, attributable, secure, and honest from commit through release.",
+        "skills": {
+            "hazim-pr-hygiene": "Review pull-request scope, description accuracy, debug residue, migrations, breaking changes, and test evidence.",
+            "hazim-commit-quality": "Review commit boundaries, messages, generated files, secret exposure, unrelated changes, and formatting noise.",
+            "hazim-pr-gate": "Evaluate pull requests through configurable, explainable signals without treating contributor identity or account age as proof of low quality.",
+            "hazim-release-gate": "Verify versioning, changelog, builds, tests, migrations, rollback, licensing, security, and documented limitations before release.",
+        },
+    },
+    "model-output": {
+        "title": "Model Output and Generation Control",
+        "purpose": "Profile repetitive model behavior and improve generation without confusing pattern suppression with proof of human authorship.",
+        "skills": {
+            "hazim-model-output-profile": "Compare model outputs with an appropriate human corpus to identify overrepresented words, phrases, structures, and n-grams.",
+            "hazim-slop-registry": "Maintain versioned anti-slop patterns with language, category, severity, confidence, examples, counterexamples, and review dates.",
+            "hazim-prompt-antislop": "Design concise generation constraints that reduce formulaic output without creating brittle negative lists or sterile prose.",
+            "hazim-generation-evaluator": "Compare outputs across specificity, substance, accuracy, voice, rhythm, originality, completeness, and safety as separate dimensions.",
+        },
+    },
+}
+
+
+CHECKS = {
+    "core": ["Select only relevant specialists", "Separate severity from confidence", "Require observable evidence", "Preserve authorization boundaries"],
+    "ui-design": ["Identify product-specific visual intent", "Name generic patterns without automatic conviction", "Inspect all component states", "Verify responsive and reduced-motion behavior"],
+    "ux-product": ["Trace the primary user task", "Exercise failure and recovery paths", "Reject fake or disconnected states", "Confirm visible promises match behavior"],
+    "copywriting": ["Preserve facts and caveats", "Remove low-information framing", "Protect deliberate voice", "Report patterns rather than alleged authorship"],
+    "code-quality": ["Search for unfinished markers", "Trace real data and behavior", "Inspect error paths", "Reject false completion"],
+    "architecture": ["Keep the diff scoped", "Demand a current consumer for abstractions", "Justify dependencies", "Avoid speculative restructuring"],
+    "security": ["Trace trust boundaries", "Verify authorization separately from authentication", "Inspect sensitive data paths", "Rank findings by impact and evidence"],
+    "evidence": ["Name the exact claim", "Apply a mechanical test", "Produce an inspectable artifact", "Avoid style-only failure decisions"],
+    "accessibility-mobile": ["Test keyboard and touch", "Inspect intermediate viewport widths", "Verify semantics and announcements", "Check RTL and mixed-direction content"],
+    "testing-release": ["Run relevant checks", "Record commands and outcomes", "Distinguish untested from passed", "List residual risk"],
+    "repository-pr": ["Review scope and history", "Verify description against diff", "Inspect release evidence", "Use explainable thresholds"],
+    "model-output": ["Choose a representative corpus", "Measure patterns by model and version", "Keep quality dimensions separate", "Document evaluation limitations"],
+}
+
+
+PRESETS = {
+    "web-app": ["hazim-ui-antislop", "hazim-ux-antislop", "hazim-code-antislop", "hazim-accessibility", "hazim-interaction-smoke-test"],
+    "mobile-app": ["hazim-ui-antislop", "hazim-mobile-layout", "hazim-rtl-bilingual", "hazim-user-flow-review", "hazim-data-privacy"],
+    "backend": ["hazim-code-antislop", "hazim-architecture-antislop", "hazim-security-review", "hazim-test-quality", "hazim-operational-readiness"],
+    "typescript": ["hazim-code-antislop", "hazim-dependency-gate", "hazim-error-handling", "hazim-security-review", "hazim-test-quality"],
+    "content": ["hazim-copy-antislop", "hazim-voice-protection", "hazim-copy-semantic-guard", "hazim-attribution-check"],
+    "arabic-content": ["hazim-arabic-copy", "hazim-voice-protection", "hazim-copy-semantic-guard", "hazim-specificity-test"],
+    "government-docs": ["hazim-arabic-copy", "hazim-copy-semantic-guard", "hazim-attribution-check", "hazim-substance-review"],
+    "open-source": ["hazim-minimal-diff", "hazim-pr-hygiene", "hazim-security-review", "hazim-placeholder-detector"],
+    "production-release": ["hazim-antislop-delivery-gate", "hazim-no-fake-verification", "hazim-operational-readiness", "hazim-release-gate"],
+    "strict": ["hazim-antislop-audit", "hazim-copy-semantic-guard", "hazim-placeholder-detector", "hazim-security-review", "hazim-accessibility", "hazim-no-fake-verification", "hazim-release-gate"],
+}
+
+
+def write(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content.rstrip() + "\n", encoding="utf-8")
+
+
+def skill_body(name: str, description: str, category: str) -> str:
+    checks = "\n".join(f"- {item}." for item in CHECKS[category])
+    return f'''---
+name: {name}
+description: {description}
+metadata:
+  author: Hazim Batwa
+  collection: Hazim Universal Anti-Slop Skills
+  category: {category}
+---
+
+# {name}
+
+Created and curated by **Hazim Batwa, Software Engineering Expert**.
+
+## Objective
+
+{description}
+
+## Operating Rules
+
+- Report observable defects and risks; never claim to prove AI authorship.
+- Preserve the user's intent, existing behavior, and unrelated work.
+- Keep severity, confidence, and evidence as separate fields.
+- Do not convert stylistic preference into a blocking defect without functional or contextual evidence.
+- Do not invent facts, test results, sources, user needs, or product requirements.
+- Prefer the minimum complete intervention.
+
+## Review Procedure
+
+{checks}
+- Record each finding with location, evidence, impact, confidence, and the smallest useful remediation.
+- If verification cannot be performed, mark it `NOT VERIFIED`; never infer success.
+
+## Output Contract
+
+Return findings in descending severity. Every finding must include:
+
+1. `Rule`: a stable, concise identifier.
+2. `Location`: the relevant file, screen, component, or text span.
+3. `Evidence`: what was observed.
+4. `Impact`: why it matters in this context.
+5. `Confidence`: high, medium, or low.
+6. `Action`: the smallest complete correction.
+
+End with one verdict: `PASS`, `PASS WITH WARNINGS`, `FAIL`, or `NOT VERIFIED`.
+'''
+
+
+def generate() -> None:
+    registry = {"name": "Hazim Universal Anti-Slop Skills", "author": "Hazim Batwa", "version": "0.1.0", "categories": CATEGORIES, "presets": PRESETS}
+    write(ROOT / "registry" / "skills.json", json.dumps(registry, indent=2, ensure_ascii=False))
+    for category, data in CATEGORIES.items():
+        for name, description in data["skills"].items():
+            write(ROOT / "skills" / name / "SKILL.md", skill_body(name, description, category))
+            write(ROOT / "skills" / name / "agents" / "openai.yaml", f'''interface:
+  display_name: "{name}"
+  short_description: "{description}"
+  default_prompt: "Use ${name} to review this work and return evidence-backed findings."
+''')
+    for name, skills in PRESETS.items():
+        write(ROOT / "presets" / f"{name}.json", json.dumps({"preset": name, "skills": skills}, indent=2))
+
+
+if __name__ == "__main__":
+    generate()

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-security-review"
+  short_description: "Perform a change-scoped security review covering authorization, injection, SSRF, XSS, CSRF, secrets, unsafe files, redirects, and defaults."
+  default_prompt: "Use $hazim-security-review to review this work and return evidence-backed findings."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-rtl-bilingual"
+  short_description: "Audit Arabic-English interfaces for directionality, mixed text, numerals, punctuation, icons, tables, alignment, and semantic mirroring."
+  default_prompt: "Use $hazim-rtl-bilingual to review this work and return evidence-backed findings."

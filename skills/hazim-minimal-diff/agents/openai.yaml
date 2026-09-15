@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-minimal-diff"
+  short_description: "Produce the smallest complete change that satisfies the request while preserving unrelated files and user modifications."
+  default_prompt: "Use $hazim-minimal-diff to review this work and return evidence-backed findings."

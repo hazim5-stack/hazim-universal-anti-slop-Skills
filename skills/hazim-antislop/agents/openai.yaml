@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-antislop"
+  short_description: "Route a request to the smallest relevant set of Hazim Universal Anti-Slop skills. Use when a task spans multiple quality domains or the correct specialist is unclear."
+  default_prompt: "Use $hazim-antislop to review this work and return evidence-backed findings."

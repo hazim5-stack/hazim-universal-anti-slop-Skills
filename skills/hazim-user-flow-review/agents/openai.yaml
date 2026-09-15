@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-user-flow-review"
+  short_description: "Review an end-to-end user journey including entry, onboarding, primary task, failure recovery, completion, and exit."
+  default_prompt: "Use $hazim-user-flow-review to review this work and return evidence-backed findings."

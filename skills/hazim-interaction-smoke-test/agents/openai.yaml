@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-interaction-smoke-test"
+  short_description: "Exercise every changed interactive element and record observable outcomes, failures, and untested paths."
+  default_prompt: "Use $hazim-interaction-smoke-test to review this work and return evidence-backed findings."

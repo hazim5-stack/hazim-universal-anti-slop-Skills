@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-slop-registry"
+  short_description: "Maintain versioned anti-slop patterns with language, category, severity, confidence, examples, counterexamples, and review dates."
+  default_prompt: "Use $hazim-slop-registry to review this work and return evidence-backed findings."

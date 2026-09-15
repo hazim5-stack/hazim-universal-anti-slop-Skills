@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-ui-antislop"
+  short_description: "Audit or guide interface design for generic AI-era visual patterns, decorative excess, and template-like composition without banning named styles by default."
+  default_prompt: "Use $hazim-ui-antislop to review this work and return evidence-backed findings."

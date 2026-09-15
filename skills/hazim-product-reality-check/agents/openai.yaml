@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-product-reality-check"
+  short_description: "Detect product theater such as fake live states, invented metrics, unconnected controls, placeholder dashboards, and unsupported claims."
+  default_prompt: "Use $hazim-product-reality-check to review this work and return evidence-backed findings."

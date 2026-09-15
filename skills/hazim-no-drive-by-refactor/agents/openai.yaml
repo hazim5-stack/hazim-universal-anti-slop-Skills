@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-no-drive-by-refactor"
+  short_description: "Prevent unrelated cleanup, renaming, formatting, and restructuring from entering a scoped change."
+  default_prompt: "Use $hazim-no-drive-by-refactor to review this work and return evidence-backed findings."

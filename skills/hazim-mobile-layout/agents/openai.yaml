@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-mobile-layout"
+  short_description: "Audit responsive reflow, intermediate widths, touch targets, software keyboards, safe areas, overflow, and hover-only behavior."
+  default_prompt: "Use $hazim-mobile-layout to review this work and return evidence-backed findings."

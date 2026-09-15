@@ -1,0 +1,4 @@
+interface:
+  display_name: "hazim-ui-originality"
+  short_description: "Test whether a visual system is specific to its product, audience, and content rather than transferable unchanged to an unrelated product."
+  default_prompt: "Use $hazim-ui-originality to review this work and return evidence-backed findings."
