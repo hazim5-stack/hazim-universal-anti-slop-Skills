@@ -26,8 +26,6 @@
 [![Agent Skills](https://img.shields.io/badge/standard-SKILL.md-9333EA.svg?style=flat-square)](#agent-environments)
 
 Created and curated by **Hazim Batwa**<br>
-**Software Engineer | Systems Designer | AI-Assisted Development Specialist**
-
 [Capability Map](#capability-map) | [Install](#installation) | [Presets](#curated-presets) | [Rulebook](docs/RULEBOOK.md) | [Architecture](#architecture) | [Credits](CREDITS.md)
 
 </div>
